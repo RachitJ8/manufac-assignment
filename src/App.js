@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import FlavTable from "./components/FlavTable";
+import GammaTable from "./components/GammaTable";
+import { data } from "./data/wineData";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // Container div to wrap the entire content of the application
+    <div className="container">
+      {/* Table container for Flavanoids Table */}
+      <div className="table-container">
+        {/* Heading for Flavanoids Table */}
+        <h1>Flavanoids Table</h1>
+
+        {/* FlavTable component receives the wine data as a prop */}
+        <FlavTable data={data} />
+      </div>
+
+      {/* Table container for Gamma Table */}
+      <div className="table-container">
+        {/* Heading for Gamma Table */}
+        <h1>Gamma Table</h1>
+
+        {/* GammaTable component receives the wine data as a prop */}
+        <GammaTable data={data} />
+      </div>
     </div>
   );
 }
